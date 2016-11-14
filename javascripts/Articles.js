@@ -4,7 +4,7 @@ class Articles {
 		this.selector = selector;
 	}
 
-	showArticles() {this.articles.forEach(article => console.log(article));}
+	showArticles() {console.log(this.articles);}
 
 	getTemplate() {
 		return this.articles.map(article => article.getTemplate()).join('\n');

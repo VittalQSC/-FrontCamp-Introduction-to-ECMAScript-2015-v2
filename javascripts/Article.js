@@ -15,7 +15,7 @@ class Article {
 	}
 	
 	render() {
-		let article = document.createElement('div');
+		const article = document.createElement('div');
 		article.className = 'article';
 		article.innerHTML =  this.getTemplate();
 		return article;
