@@ -1,0 +1,33 @@
+{
+  "name": "wqe",
+  "version": "1.0.0",
+  "description": "first task for Front Camp",
+  "main": "index.js",
+  "dependencies": {
+    "babel-cli": "^6.18.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-latest": "^6.16.0"
+  },
+  "scripts": {
+    "build": "
+      babel javascripts/Article.js -d dist &&
+      babel javascripts/Articles.js -d dist &&  
+      babel javascripts/Request.js -d dist &&
+      babel javascripts/Template.js -d dist
+      ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VittalQSC/-FrontCamp-Introduction-to-ECMAScript-2015-v2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VittalQSC/-FrontCamp-Introduction-to-ECMAScript-2015-v2/issues"
+  },
+  "homepage": "https://github.com/VittalQSC/-FrontCamp-Introduction-to-ECMAScript-2015-v2#readme"
+}
+  
