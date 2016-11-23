@@ -11,12 +11,7 @@
     "babel-preset-latest": "^6.16.0"
   },
   "scripts": {
-    "build": "
-      babel javascripts/Article.js -d dist &&
-      babel javascripts/Articles.js -d dist &&  
-      babel javascripts/Request.js -d dist &&
-      babel javascripts/Template.js -d dist
-      ",
+    "build": "babel javascripts/Article.js -d dist && babel javascripts/Articles.js -d dist && babel javascripts/Request.js -d dist && babel javascripts/Template.js -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
