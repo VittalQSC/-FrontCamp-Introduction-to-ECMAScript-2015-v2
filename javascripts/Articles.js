@@ -1,3 +1,5 @@
+const Article = require('./Article');
+
 class Articles {
 	constructor(articleObjects, selector = '#main_content') {
 		this.articles = articleObjects.map(articleObj => new Article(articleObj));
@@ -13,3 +15,5 @@ class Articles {
 	render() {document.querySelector(this.selector).innerHTML = this.getTemplate();}
 
 }
+
+module.exports = Articles;

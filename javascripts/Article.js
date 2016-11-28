@@ -21,3 +21,5 @@ class Article {
 		return article;
 	}
 }
+
+module.exports = Article; 
