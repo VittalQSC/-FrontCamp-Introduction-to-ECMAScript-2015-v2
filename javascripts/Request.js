@@ -6,7 +6,7 @@ const Articles = require('./Articles');
 
 	const request = url; 
 	const init = {method: 'GET'};
-
+	
 	fetch(request, init)
 		.then(response => response.json())
 		.then(data => {
