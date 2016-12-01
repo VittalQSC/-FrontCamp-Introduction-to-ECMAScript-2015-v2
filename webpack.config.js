@@ -1,39 +1,39 @@
 const NODE_ENV = process.env.NODE_ENV || "development";
 const webpack = require('webpack');
+console.log(NODE_ENV);
 
 module.exports = {
-  entry: ['whatwg-fetch', './javascripts/Request.js', './javascripts/Template.js'],
+  entry: ['./javascripts/Template.js', './app.js'],
   
   output: {
     filename: 'bundle.js',
     path: __dirname + '/build'
   },
   
-  watch: NODE_ENV == "development",
+  devtool: NODE_ENV == "development" ? 'eval' :'source-map',
+  
+  // watch: NODE_ENV == "development",
   
   watchOptions: { aggregateTimeout: 100 },
-  
-  devtool: NODE_ENV == "development" ? "eval" : "source-map",
-  
+
   plugins: [
-  	new webpack.DefinePlugin({
-  		NODE_ENV: JSON.stringify(NODE_ENV)
-  	})
+    new webpack.DefinePlugin({
+      NODE_ENV: JSON.stringify(NODE_ENV)
+    })
   ],
   
   module: {
-  	loaders: [
-  		{
-  			test: /\.js$/,
-  			exclude: /(node_modules|bower_components)/,
-  			loader: 'babel-loader?presets[]=es2015'
-  	    },
-  	  	{
-        	test: /\.scss$/,
-        	loaders: ["style-loader", "css-loader", "sass-loader"]
-      	}
-
-  	]
-  }
+       loaders: [
+          {test: /\.css$/, loaders: ['style', 'css']},
+          {
+              test: /\.js$/,
+              exclude: /(node_modules|bower_components)/,
+              loader: 'babel-loader',
+              query: {
+              presets: ['es2015']
+            }
+          }
+      ]
+  },
 
 };
