@@ -2,6 +2,8 @@ const NODE_ENV = process.env.NODE_ENV || "development";
 const webpack = require('webpack');
 console.log(NODE_ENV);
 
+// WILL IMPLEMENT LATER
+
 module.exports = {
   entry: ['./javascripts/Template.js', './app.js'],
   
@@ -12,7 +14,7 @@ module.exports = {
   
   devtool: NODE_ENV == "development" ? 'eval' :'source-map',
   
-  // watch: NODE_ENV == "development",
+  watch: NODE_ENV == "development",
   
   watchOptions: { aggregateTimeout: 100 },
 

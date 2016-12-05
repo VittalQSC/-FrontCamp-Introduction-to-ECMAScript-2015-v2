@@ -1,17 +1,20 @@
-class Article {
-	constructor(article) {Object.assign(this, article);}
+import ArticleBuilder from './ArticleBuilder.js'
+
+export default class Article {
+	constructor(article) {
+		Object.assign(this, article);
+		this.articleBuilder = new ArticleBuilder();
+	}
 
 	getTemplate() {
-		return `
-		<div class='article'>
-			<img class='urlToImage' src='${this.urlToImage}'></img>
-			<h1 class='title'>${this.title}<h1>
-			<h2 class='publishedAt'>${this.publishedAt}<h2>
-			<p class='description'>${this.description}<p>
-			<h2 class='author'>${this.author}<h2>
-			<a class='url' href='${this.url}'>${this.url}</a>
-		</div>	
-		`;
+		this.articleBuilder.buildImgTitle(this.urlToImage);
+		this.articleBuilder.buildTitle(this.title);
+		this.articleBuilder.buildPublishDate(this.publishedAt);
+		this.articleBuilder.buildDescription(this.description);
+		this.articleBuilder.buildAuthor(this.author);
+		this.articleBuilder.buildUrl(this.url);
+		
+		return this.articleBuilder.getResult();
 	}
 	
 	render() {
@@ -21,5 +24,4 @@ class Article {
 		return article;
 	}
 }
-
-module.exports = Article; 
+ 

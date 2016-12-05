@@ -1,6 +1,6 @@
-const Article = require('./Article');
+import Article from './Article';
 
-class Articles {
+export default class Articles {
 	constructor(articleObjects, selector = '#main_content') {
 		this.articles = articleObjects.map(articleObj => new Article(articleObj));
 		this.selector = selector;
@@ -15,5 +15,3 @@ class Articles {
 	render() {document.querySelector(this.selector).innerHTML = this.getTemplate();}
 
 }
-
-module.exports = Articles;

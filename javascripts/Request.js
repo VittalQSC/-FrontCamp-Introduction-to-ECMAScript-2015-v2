@@ -1,4 +1,6 @@
-const Articles = require('./Articles');
+// import Articles from './Articles';
+import Articles from './ArticlesDOMRenderAdapter';
+// import Articles from './ArticlesConsoleRenderAdapter';
 
 (function () {
 	const API_KEY = '5bfd3aff68c94f36a5d0d87e9e7a1f89';
