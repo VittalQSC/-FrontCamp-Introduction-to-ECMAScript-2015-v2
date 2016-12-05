@@ -1,6 +1,6 @@
-const NODE_ENV = process.env.NODE_ENV || "development";
-const webpack = require('webpack');
-console.log(NODE_ENV);
+// const NODE_ENV = process.env.NODE_ENV || "development";
+// const webpack = require('webpack');
+// console.log(NODE_ENV);
 
 // WILL IMPLEMENT LATER
 
@@ -12,16 +12,16 @@ module.exports = {
     path: __dirname + '/build'
   },
   
-  devtool: NODE_ENV == "development" ? 'eval' :'source-map',
+  devtool: 'source-map',
   
-  watch: NODE_ENV == "development",
+  // watch: true,
   
   watchOptions: { aggregateTimeout: 100 },
 
   plugins: [
-    new webpack.DefinePlugin({
-      NODE_ENV: JSON.stringify(NODE_ENV)
-    })
+    // new webpack.DefinePlugin({
+    //   NODE_ENV: JSON.stringify(NODE_ENV)
+    // })
   ],
   
   module: {

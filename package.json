@@ -15,7 +15,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
-    "start": "NODE_ENV=development webpack && webpack-dev-server --inline --hot",
+    "start": "webpack && webpack-dev-server --inline --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
