@@ -6,4 +6,11 @@ import './stylesheets/showNews.css';
 // }
 
 import './stylesheets/taskStyle.css';
-import './javascripts/Request.js';
+import articles from './javascripts/Request.js';
+
+window.editNews = function () {
+	var articleCopy = {};
+	articles[0] && (Object.assign(articleCopy, articles[0]));
+	articleCopy.title = 'THIS NEWS EDITED';
+	articles.editNews(articles[0], articleCopy);
+}

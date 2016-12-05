@@ -8,13 +8,20 @@ import Articles from './ArticlesDOMRenderAdapter';
 
 	const request = url; 
 	const init = {method: 'GET'};
-	
+	window.articlesGlobal;
+
 	fetch(request, init)
 		.then(response => response.json())
 		.then(data => {
 			const articles = new Articles(data.articles);
 			articles.render();
+			
+			window.articlesGlobal = articles;
+			document.querySelector('.edit-button').addEventListener('click', function () {
+				var articles = window.articlesGlobal.articles;
+				articles[0] && articles[0].setTitle("NEW TITLE");
+			});
 		})
 		.catch(err => console.log(err))
-
-})()
+	
+})();

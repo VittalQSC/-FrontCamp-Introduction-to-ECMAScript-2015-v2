@@ -4,6 +4,10 @@ export default class ArticleBuilder {
 		this.body = ``;
 	}
 
+	clear () {
+		this.body = ``;
+	}
+
 	buildImgTitle (urlToImage) {
 		urlToImage = urlToImage || this.urlToImage;
 		this.body += `<img class='urlToImage' src='${urlToImage}'></img>
